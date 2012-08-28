@@ -1,0 +1,21 @@
+GIT
+  remote: git@github.com:Fingertips/Peck.git
+  revision: bea39653f7e5f3b355d6ae043bcf2d9fff6ab4bb
+  specs:
+    peck (0.1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    json (1.7.5)
+    nap (0.5.1)
+    rake (0.9.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json
+  nap
+  peck!
+  rake
