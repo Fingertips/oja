@@ -1,0 +1,14 @@
+{
+  "original-purchase-date":"2012-02-14 21:06:28 Etc\/GMT",
+  "purchase-date":"2012-02-14 21:21:26 Etc\/GMT",
+  "expires-date-formatted":"2012-03-14 21:21:26 Etc\/GMT",
+  "expires-date":"1329254786000",
+  "quantity":"1",
+  "bvrs":"1,0",
+  "item-id":"774979675",
+  "original-transaction-id":"1000000026852552",
+  "transaction-id":"1000000026854199",
+  "version-external-identifier":"9362012",
+  "bid":"com.corp.AcmeApp",
+  "product-id":"com.corp.AcmeApp.Monthly"
+}
