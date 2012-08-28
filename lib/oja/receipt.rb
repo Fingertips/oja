@@ -37,11 +37,12 @@ module Oja
     end
 
     def verify
-      response = request(:production)
-      if response.sandbox_receipt_in_production?
-        request(:sandbox)
-      else
-        response
+      if response = request(:production)
+        if response.sandbox_receipt_in_production?
+          request(:sandbox)
+        else
+          response
+        end
       end
     end
 
