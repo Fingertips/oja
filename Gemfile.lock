@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:Fingertips/Peck.git
-  revision: bea39653f7e5f3b355d6ae043bcf2d9fff6ab4bb
+  revision: 352cdde4d14f8952caae551667e512e1ff319500
   specs:
     peck (0.1.0)
 
