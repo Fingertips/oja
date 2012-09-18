@@ -6,7 +6,7 @@ require 'oja'
 
 class Peck::Context
   def receipt_filename(name)
-    filename = File.expand_path("../fixtures/receipts/#{name}.json", __FILE__)
+    filename = File.expand_path("../fixtures/receipts/#{name}.txt", __FILE__)
     if File.exist?(filename)
       filename
     else
@@ -15,10 +15,6 @@ class Peck::Context
   end
 
   def receipt_data(name)
-    JSON.parse(File.read(receipt_filename(name)))
-  end
-
-  def receipt_as_json(name)
-    JSON.dump(receipt_data(name))
+    File.read(receipt_filename(name))
   end
 end

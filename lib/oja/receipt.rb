@@ -2,7 +2,8 @@ require 'base64'
 
 module Oja
   class Receipt
-    attr_accessor :data, :filename
+    attr_accessor :filename
+    attr_writer :data
 
     def initialize(attributes)
       attributes.each do |attribute, value|
@@ -22,12 +23,12 @@ module Oja
       File.read(filename)
     end
 
-    def json_data
-      data ? JSON.dump(data) : read
+    def data
+      @data ||= read
     end
 
     def receipt_data
-      Base64.encode64(json_data)
+      Base64.encode64(data)
     end
 
     def to_json
@@ -44,12 +45,6 @@ module Oja
           response
         end
       end
-    end
-
-    private
-
-    def data_or_read
-      data || File.read(filename)
     end
   end
 end
