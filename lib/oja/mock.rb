@@ -27,7 +27,7 @@ module Oja
 
     def self.next_response_arguments
       if responses.empty?
-        [200, { status: 0, receipt: '' }]
+        [200, { status: 0, receipt: {}}]
       else
         responses.pop
       end
