@@ -2,6 +2,12 @@ require File.expand_path('../preamble', __FILE__)
 require 'oja/mock'
 
 describe Oja do
+  it "verifies receipt data" do
+    response = Oja.verify(receipt_data('receipt'))
+    # The default for the mock response is success
+    response.should.be.active
+  end
+
   it "verifies an active receipt from disk" do
     response = Oja.verify_filename(receipt_filename('receipt'))
     # The default for the mock response is success

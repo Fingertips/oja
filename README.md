@@ -13,6 +13,7 @@ iOS and Mac application receive Receipts when handling purchases from the App St
     response = Oja.verify(:data => data)
     if response.active?
       # Whatever you need to do
+      p response.receipt_data
     elsif response.inactive?
       # The receipt probably expired
     else
