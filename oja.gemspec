@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = 'oja'
-  spec.version = '0.1.1'
+  spec.version = '0.1.2'
 
   spec.author = "Manfred Stienstra"
   spec.email = "manfred@fngtps.com"
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
   spec.has_rdoc = true
   spec.extra_rdoc_files = ['LICENSE']
   spec.rdoc_options << "--charset=utf-8"
+  spec.add_dependency('nap')
 end
