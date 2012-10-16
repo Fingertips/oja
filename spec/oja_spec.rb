@@ -8,6 +8,18 @@ describe Oja do
     response.should.be.active
   end
 
+  it "verifies receipt data with a password" do
+    response = Oja.verify(receipt_data('receipt'), 'secret')
+    # The default for the mock response is success
+    response.should.be.active
+  end
+
+  it "verifies receipt data passed in an option hash" do
+    response = Oja.verify(:data => receipt_data('receipt'))
+    # The default for the mock response is success
+    response.should.be.active
+  end
+
   it "verifies an active receipt from disk" do
     response = Oja.verify_filename(receipt_filename('receipt'))
     # The default for the mock response is success
