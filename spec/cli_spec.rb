@@ -17,6 +17,11 @@ describe Oja::CLI do
     output.should.include 'product_id'
   end
 
+  it "allows you to pass a password" do
+    cli = Oja::CLI.new([receipt_filename('receipt'), '--password', 'secret'])
+    cli.password.should == 'secret'
+  end
+
   it "shows a message when the receipt is invalid" do
     Oja::Mock.responses << [200, { status: Oja::Response.status_code(:inactive) }]
     output = oja(receipt_filename('receipt'))
