@@ -19,3 +19,7 @@ iOS and Mac application receive Receipts when handling purchases from the App St
     else
       raise RuntimeError, response.humanized_status
     end
+
+## Oja?
+
+Ja.
