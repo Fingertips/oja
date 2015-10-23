@@ -26,4 +26,9 @@ describe Oja::Receipt do
     receipt = Oja::Receipt.new(:data => receipt_data('receipt.txt'), :password => 'secret')
     JSON.parse(receipt.to_json)['password'].should == 'secret'
   end
+
+  it "accepts JSON data as the receipt" do
+    receipt = Oja::Receipt.new(:data => receipt_data('receipt.json'), format: :json)
+    receipt.data.should == receipt_data('receipt.json')
+  end
 end

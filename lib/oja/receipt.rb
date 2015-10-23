@@ -2,7 +2,7 @@ require 'base64'
 
 module Oja
   class Receipt
-    attr_accessor :filename, :password
+    attr_accessor :filename, :password, :format
     attr_writer :data
 
     def initialize(attributes)
@@ -32,9 +32,18 @@ module Oja
     end
 
     def attributes
-      attributes = { 'receipt-data' => receipt_data }
+      if json?
+        attributes = JSON.parse(data)
+      else
+        attributes = { 'receipt-data' => receipt_data }
+      end
+
       attributes['password'] = password if password
       attributes
+    end
+
+    def json?
+      format == :json
     end
 
     def to_json
