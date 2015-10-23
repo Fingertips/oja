@@ -38,7 +38,7 @@ class Peck::Context
   end
 
   def receipt_filename(name)
-    filename = File.expand_path("../fixtures/receipts/#{name}.txt", __FILE__)
+    filename = File.expand_path("../fixtures/receipts/#{name}", __FILE__)
     if File.exist?(filename)
       filename
     else

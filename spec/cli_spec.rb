@@ -9,7 +9,7 @@ describe Oja::CLI do
 
   it "verifies a receipt from disk" do
     Oja::Mock.responses << [200, { status: Oja::Response.status_code(:active), receipt: { 'product_id' => 'day' }}]
-    cli = Oja::CLI.new([receipt_filename('receipt')])
+    cli = Oja::CLI.new([receipt_filename('receipt.txt')])
     output = capture_stdout do
       cli.run
     end.to_s
@@ -18,13 +18,13 @@ describe Oja::CLI do
   end
 
   it "allows you to pass a password" do
-    cli = Oja::CLI.new([receipt_filename('receipt'), '--password', 'secret'])
+    cli = Oja::CLI.new([receipt_filename('receipt.txt'), '--password', 'secret'])
     cli.password.should == 'secret'
   end
 
   it "shows a message when the receipt is invalid" do
     Oja::Mock.responses << [200, { status: Oja::Response.status_code(:inactive) }]
-    output = oja(receipt_filename('receipt'))
+    output = oja(receipt_filename('receipt.txt'))
     output.should.include 'Receipt is invalid (Inactive)'
   end
 
